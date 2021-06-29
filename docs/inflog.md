@@ -12,7 +12,11 @@ _Work in progress..._
 
 ### Archivos relacionados
 
-_Work in progress..._
+| Path                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| ``/auth/login.py          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
+
+
 
 ## Despliegue
 
