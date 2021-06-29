@@ -14,7 +14,7 @@ _Work in progress..._
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| ``/auth/login.py          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
+| S/auth/login.py`          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
 
 
 
@@ -25,7 +25,7 @@ _Work in progress..._
 ## Construido con
 
 _Estas son algunas de las herramientas utilizadas_
-
+S
 * [Python](https://www.python.org)
 * [Maven](https://pip.pypa.io/en/stable/installing/)
 
