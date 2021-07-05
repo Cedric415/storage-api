@@ -13,29 +13,79 @@ _Las entidades con las que trabajaremos seran_,
 
 ## Operacion de almacenamiento de datos
 
-###Operacion a realizar por el usuarios
+### Operacion a realizar por el usuarios
 
 - Registrarse
 : se solicitara nombre, correo electronico, usuario y contraseña
 - Actualizacion
 : eliminar el usuario para despues rehacerlo.
-#### Subir una noticias
 
+### Subir una noticia
 
+- Nueva noticia
+: Se solicitara titulo de la noticia, la categoria, una sinopsis de la noticia, fuente de informacion(Enlace)
+- Actualizar noticia noticia
+: Se actualizaran unicamente los datos que desea actualizar (Titulo,categoria, noticia, fuente)
 
-_Work in progress..._
+## Operacion de consulta de datos
 
-### Archivos relacionados
+- Solicitar datos de un usuario
+   - básicos
+   - noticas subidas
+   - usuario
+   - fecha
+   - id_usuario
+
+- Solicitar datos de una nota
+   - básicos
+   - autor
+   - por fecha
+   - por categoria
+   - por titulo
+
+## Estructura de solicitud y respuesta
+
+### Registro de un usuario
+
+```
+{
+    "nombre": "Elva Pasar",
+    "e_mail": "elva_pas69@ejemplo.com"
+    "usuario": "ElvPas415",
+    "password": "..."
+}
+```
+### Registro exitoso
+
+```
+{
+    "id_usuario": "....",
+}
+```
+### Registro exitoso
+
+```
+{
+    "code": 500,
+    "message": "este es un mensaje de error..."
+}
+```
+
+## Archivos relacionados
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| /auth/login          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
+| `/noticia/usuario`        | consultar las noticias que ha subido un usuario |
+| `/noticia/fecha`          | Consultar las noticias por fecha en especifico |
+| `/noticia/categoria`      | Consultar las noticias por categoria de estas |
+| `/noticia/query`          | Consultar las noticias por el titulo que tengan |
+
+### Archivo principal y ruta de almacenamiento
+- `inflog/inflog.py`
+
+- `inflog/`  
 
 
-
-## Despliegue
-
-_Work in progress..._
 
 ## Construido con
 
