@@ -1,10 +1,15 @@
 # Inflog
+> Autor: Cedric Flores
 
-_En este proyecto vamos a realizar un blog en el que los usuarios subiran noticias cortas en las que se se veran el la noticia quien subio la noticia y la categoria a la que pertenece. (Ejemplo: Tecnoloiga)_
+_En este proyecto vamos a realizar una pagina web en la que  tendras que logearte para poder subir noticias, los usuarios subiran noticias cortas y su fuente de informacion en las que se se veran el la noticia quien subio la noticia y la categoria a la que pertenece. (Ejemplo: Tecnoloiga)_
 
-## Comenzando
+## Estructura API
 
-_Work in progress..._
+_Las _entidades con las que trabajaremos seran_,
+
+ - Usuario (nombre, usuario, password)
+ - Noticia (titulo, categoia, noticia, fuente)
+ - Reportes (nombre, usuario, reporte)
 
 ### Pre-requisitos
 
@@ -14,7 +19,7 @@ _Work in progress..._
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| S/auth/login.py`          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
+| /auth/login          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API |
 
 
 
@@ -27,7 +32,7 @@ _Work in progress..._
 _Estas son algunas de las herramientas utilizadas_
 S
 * [Python](https://www.python.org)
-* [Maven](https://pip.pypa.io/en/stable/installing/)
+* [PIP](https://pip.pypa.io/en/stable/installing/)
 
 ## Autores ✒️
 
