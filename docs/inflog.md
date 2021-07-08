@@ -10,7 +10,7 @@ _Este proyecto puede ser utilizado mas que nada como un medio de informacion lle
 _Las entidades con las que trabajaremos seran_,
 
  - Usuario (usuario_id, nombre, e_mail, password)
- - Noticia (noticia_id, usuario_id, titulo, categoia, noticia, fuente)
+ - Noticia (noticia_id, usuario_id, titulo, categoria, fecha, noticia, fuente)
  - Reportes (reporte_id, usuario_id, noticia_id, descripcion)
 
 ## Interacciones de datos
@@ -26,6 +26,7 @@ _Algunas de las consultas que se pueden realizar son:_
   - Por Id
   - Por usuario
   - Por categoria
+  - por fecha
 
 - Consultar datos de los usuarios
   - Por id
@@ -34,6 +35,7 @@ _Algunas de las consultas que se pueden realizar son:_
   - Todas
   - Por id
   - Por categoria
+  - Por fecha
 ## Operaciones de datos
 
 ### Operacion a realizar por el usuarios
@@ -51,12 +53,17 @@ _Algunas de las consultas que se pueden realizar son:_
 : Se actualizaran unicamente los datos que desea actualizar (Titulo,categoria, noticia, fuente)
 
 ## Rutas https
-
-
+| Path                  | Descripción |
+| --------------------- | ----------- |
+|  /inflog/noticia          |   se podran consultar todas las noticias
+|  /inflog/noticia/<noticia_id>         |  Se podra consultar las noticias por medio de su identificador unico
+|  /inflog/noticia/<usuario_id>          |  Se podra consultar las noticias subidas por un usuario
+|  /inflog/almacen_usuario/<usuario_id> |   Se podra consultar la informacion del usuario         
+|  /inflog/reportes/<noticia_id>/ | Se podran consultar los reportes hechos hacia una noticia por medio de su id
 
 ## Ejemplos de mensajes HTTP
 
-## Registro de noticia Nueva
+### Registro de noticia Nueva
 ```
 {
    "titulo": "El tether asusta a los expertos: puede ser el verdadero 'cisne negro' de las criptomonedas",
@@ -94,7 +101,7 @@ _Algunas de las consultas que se pueden realizar son:_
 
 ## Ejemplos de interacciones con el servidor
 ```
-POST /inflog/storage_user
+POST /inflog/almacen_usuario
 ```
 - Recibe una estructura para registrar un usuario nuevo.
 - 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
@@ -108,27 +115,32 @@ POST /inflog/noticia
 - D.O.M regresa un mensaje de falla.
 
 ```
-GET /inflog/storage_user
+GET /inflog/noticia
 ```
-- Recibe una estructura para registrar un usuario nuevo.
-- 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
+- Regresa los datos de una noticia
+- 200, despliega la informacion de la noticia solicitada.
 - D.O.M regresa un mensaje de falla.
 
-## Archivos relacionados
+```
+GET /inflog/noticia/<usuario_id>
+```
+- Regresa los datos de las noticias subidas por un usuario
+- 200, despliega la informacion sobre los noticias realizadas por un usuario.
+- D.O.M regresa un mensaje de falla.
 
-| Path                    | Descripción                                         |
-| ----------------------- | --------------------------------------------------- |
-| `/noticia/usuario`        | consultar las noticias que ha subido un usuario |
-| `/noticia/fecha`          | Consultar las noticias por fecha en especifico |
-| `/noticia/categoria`      | Consultar las noticias por categoria de estas |
-| `/noticia/query`          | Consultar las noticias por el titulo que tengan |
+```
+GET /inflog/reportes
+```
+- Regresa los datos de los reportes hechos.
+- 200, despliega la informacion sobre los reportes realizados.
+- D.O.M regresa un mensaje de falla.
 
-### Archivo principal y ruta de almacenamiento
-- `inflog/inflog.py`
-
-- `inflog/`  
-
-
+```
+GET /inflog/reportes/<noticia_id>
+```
+- Regresa los datos de los reportes hechos hacia una noticia.
+- 200, despliega la informacion sobre los reportes realizados hacia una noticia.
+- D.O.M regresa un mensaje de falla.
 
 ## Construido con
 
