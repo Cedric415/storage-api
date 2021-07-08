@@ -1,17 +1,40 @@
 # Inflog
 > Autor: Cedric Flores
-
+## Consiste en
 _En este proyecto vamos a realizar un blog en la que  tendras que logearte para poder subir noticias, los usuarios subiran noticias cortas y su fuente de informacion en las que se se veran el la noticia quien subio la noticia y la categoria a la que pertenece. (Ejemplo: Tecnoloiga)_
+## Aplicacion
+_Este proyecto puede ser utilizado mas que nada como un medio de informacion lleno de noticias que puedan subir los mismos usuarios para estar al tanto de las noticias actuales que hay, dependiendo del tema de interes que el usuario desee saber._
 
-## Estructura API
+## Modelado de datos
 
 _Las entidades con las que trabajaremos seran_,
 
- - Usuario (nombre, e_mail, usuario, password)
- - Noticia (titulo, categoia, noticia, fuente)
- - Reportes (nombre, usuario, reporte)
+ - Usuario (usuario_id, nombre, e_mail, password)
+ - Noticia (noticia_id, usuario_id, titulo, categoia, noticia, fuente)
+ - Reportes (reporte_id, usuario_id, noticia_id, descripcion)
 
-## Operacion de almacenamiento de datos
+## Interacciones de datos
+
+_Aqui se mostraran algunas interacciones entre los datos que se veran utilizados en este proyecto_
+
+- No se podra subir una noticia sin antes registrarse
+- Se podran ver las noticias pero para hacer un comentario sobre la noticia deberas estar registrado
+- Se podra realizar reportes sobre las noticias para señalar si estas son falsas o por el estilo
+## Consultas de datos
+_Algunas de las consultas que se pueden realizar son:_
+- Consultar datos de las noticias
+  - Por Id
+  - Por usuario
+  - Por categoria
+
+- Consultar datos de los usuarios
+  - Por id
+
+- Consultar lista de noticias
+  - Todas
+  - Por id
+  - Por categoria
+## Operaciones de datos
 
 ### Operacion a realizar por el usuarios
 
@@ -27,24 +50,22 @@ _Las entidades con las que trabajaremos seran_,
 - Actualizar noticia noticia
 : Se actualizaran unicamente los datos que desea actualizar (Titulo,categoria, noticia, fuente)
 
-## Operacion de consulta de datos
+## Rutas https
 
-- Solicitar datos de un usuario
-   - básicos
-   - noticas subidas
-   - usuario
-   - fecha
-   - id_usuario
 
-- Solicitar datos de una nota
-   - básicos
-   - autor
-   - por fecha
-   - por categoria
-   - por titulo
 
-## Estructura de solicitud y respuesta
+## Ejemplos de mensajes HTTP
 
+## Registro de noticia Nueva
+```
+{
+   "titulo": "El tether asusta a los expertos: puede ser el verdadero 'cisne negro' de las criptomonedas",
+   "categoria": "Economia",
+   "usuario": "Elm Inion",
+   "noticia": "Ya que no es tan mediático, lo primero es presentar al tether. Se trata de una stablecoin o activo digital ligado a un activo del mundo real, en este caso el dólar"
+   "Fuente": "https://www.eleconomista.es"
+}
+```
 ### Registro de un usuario
 
 ```
@@ -70,6 +91,28 @@ _Las entidades con las que trabajaremos seran_,
     "message": "este es un mensaje de error..."
 }
 ```
+
+## Ejemplos de interacciones con el servidor
+```
+POST /inflog/storage_user
+```
+- Recibe una estructura para registrar un usuario nuevo.
+- 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
+- D.O.M regresa un mensaje de falla.
+
+```
+POST /inflog/noticia
+```
+- Recibe una estructura para registrar una noticia nueva.
+- 201, sube la noticia y regresa un mensaje informando que se ha subido correctamente.
+- D.O.M regresa un mensaje de falla.
+
+```
+GET /inflog/storage_user
+```
+- Recibe una estructura para registrar un usuario nuevo.
+- 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
+- D.O.M regresa un mensaje de falla.
 
 ## Archivos relacionados
 
