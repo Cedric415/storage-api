@@ -189,7 +189,15 @@ llaves, code y message, el message debe contener el mensaje, Not Implemented.
 
 | Concepto                 | Commit Hash|
 | --------------------- | ----------- |
-|  rutas especificadas|   
+|  rutas especificadas|   73a73fe621e4d21c25a0af808bd5e3f8da3c11ac
+
+- Crear en su carpeta de modulos funciones que emulen las interacciones con el almacén de archivos o datos, es decir que
+si necesitas una función de consulta, crear una función que retorne una consulta simulada con datos codificados como
+constantes, y si necesitas crear objetos funciones que retornen simulando una creación exitosa.
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de: modules/inflog.py|
 
 ## Construido con
 
