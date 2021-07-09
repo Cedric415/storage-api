@@ -59,7 +59,7 @@ _Algunas de las consultas que se pueden realizar son:_
 |  /inflog/noticia/<noticia_id>         |  Se podra consultar las noticias por medio de su identificador unico
 |  /inflog/noticia/<usuario_id>          |  Se podra consultar las noticias subidas por un usuario
 |  /inflog/almacen_usuario/<usuario_id> |   Se podra consultar la informacion del usuario         
-|  /inflog/reportes/<noticia_id>/ | Se podran consultar los reportes hechos hacia una noticia por medio de su id
+|  /inflog/reportes/<noticia_id> | Se podran consultar los reportes hechos hacia una noticia por medio de su id
 
 ## Ejemplos de mensajes HTTP
 
@@ -176,13 +176,20 @@ _Una vez el proyecto se encuetre finalizado o al menos utilizable se realizaran 
 - Crear los archivos correspondientes a su proyecto, y someterlos a control de versiones
 - Entregable, señalar el commit-hash que contiene la creación de dichos archivos.
 
-
 | Concepto                 | Commit Hash|
 | --------------------- | ----------- |
 |  Creacion de docs/inflog.md| 1e1705b5c9874492a3ec7e2b17598ccb8d8385ad  
 |  Creacion de: modules/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
 |  Creacion de: models/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
 |  Creacion de: routes/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
+
+- Crear todas las rutas especificadas en su archivo de documentación dentro de su archivo en la carpeta routes, y todas
+deben de responder 501, con Content-Type: application/json, y un cuerpo de respuesta en formato json con 2
+llaves, code y message, el message debe contener el mensaje, Not Implemented.
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  rutas especificadas|   
 
 ## Construido con
 
