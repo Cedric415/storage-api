@@ -180,9 +180,9 @@ _Una vez el proyecto se encuetre finalizado o al menos utilizable se realizaran 
 | Concepto                 | Commit Hash|
 | --------------------- | ----------- |
 |  Creacion de docs/inflog.md| 1e1705b5c9874492a3ec7e2b17598ccb8d8385ad  
-|  Creacion de: modules/inflog.py|
-|  Creacion de: models/inflog.py|
-|  Creacion de: routes/inflog.py|
+|  Creacion de: modules/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
+|  Creacion de: models/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
+|  Creacion de: routes/inflog.py| 20155a2bc33890f88d9bf4253b575ff656a4eda0
 
 ## Construido con
 
