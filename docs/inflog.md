@@ -166,7 +166,23 @@ _Una vez el proyecto se encuetre finalizado o al menos utilizable se realizaran 
 
 # Computo en la nube
 
-## 
+## Commit
+- Crear un fork del proyecto storage-api
+- Entregable, señalar cual es el commit-hash, apartir del que ustedes realizaron el fork:
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de Fork|   812228b0e369322b4c541fc8f18a51efd47a6932
+
+- Crear los archivos correspondientes a su proyecto, y someterlos a control de versiones
+- Entregable, señalar el commit-hash que contiene la creación de dichos archivos.
+
+
+| Concepto                 | Commit Hash|
+| --------------------- | ----------- |
+|  Creacion de docs/inflog.md| 1e1705b5c9874492a3ec7e2b17598ccb8d8385ad  
+|  Creacion de: modules/inflog.py|
+|  Creacion de: models/inflog.py|
+|  Creacion de: routes/inflog.py|
 
 ## Construido con
 
