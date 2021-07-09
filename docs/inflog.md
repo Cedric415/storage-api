@@ -142,10 +142,36 @@ GET /inflog/reportes/<noticia_id>
 - 200, despliega la informacion sobre los reportes realizados hacia una noticia.
 - D.O.M regresa un mensaje de falla.
 
+## Plan de implementacion (Aspecto General)
+
+_Con este proyecto se busca crear una pagina web donde un usuario puede acceder a la pagina web para buscar noticias sobre algun tema en particular que desee investigar ya que en esta pagina estaran divididas por categoria como pueden ser noticias tecnologias, sobre economia, etc. Asi como se puden visualizar noticias tambien se podran subir noticias que tu encuentres en internet para asi contribuir a la pagina, para esto se requerira de un registro previo para poder subir noticias y tambien para poder realizar reportes sobre alguno noticia ya sea por que la noticia se encuentre mal categorizada asi como una noticia que pudiese llegar a ser "Fake" o simplemente una noticia no relevante._
+
+##  Plan de implementacion (Aspecto Tecnico)
+### Modulos de codigo necesarios
+- Las rutas son necesarias ya que en estas se encuentra el como esta estructurado el proyecto y el como funcionara.
+
+- Las funciones de almacenamiento seran necesarias para archivar la informacion que sea subida al proyecto.
+
+- Funciones para agregar, eliminar o editar datos que sean subidos al proyecto.
+
+
+### Metodos de almacenamiento requeridos
+- Almacenamiento por medio de archivos locales archivos locales.
+
+### Plan para la codificacion de los modulos
+_Los modulos seran planeados e implementeados a medida que se vaya desarrollando el proyecto para verficar y confirmar de que se va encargar cada modula para el funcionamiento del proyecto sea efectivo._
+
+### Plan para la verificacion de la calidad del producto
+_Una vez el proyecto se encuetre finalizado o al menos utilizable se realizaran una serie de pruebas para verificar que el funcionamiento del proyecto sea correcto se subiran noticias, se registraran usuarios, se eliminaran usuarios, etc. Todas estas pruebas para verficar que la pagina no tenga alguna fisura al momento de querer utilizarla._
+
+# Computo en la nube
+
+## 
+
 ## Construido con
 
 _Estas son algunas de las herramientas utilizadas_
-S
+
 * [Python](https://www.python.org)
 * [PIP](https://pip.pypa.io/en/stable/installing/)
 
