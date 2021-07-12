@@ -220,6 +220,10 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
   - Aqui se muestra los datos requeridos para subir una noticia a la pagina la cual te pide un titulo, una categoria, fecha de la noticia, una pequeña descripcion y la fuente de informacion una vez completo el formulario se le dara alboton para subir la noticia.
   ![Subir_Noticia](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_subir_noticia.PNG)
 
+  | Concepto                 | Commit Hash|
+  | --------------------- | ----------- |
+  |  Creacion y descripcion de los MoqUps| 738f2dcac6fb7dbb6cc52cddeba7fc422805713c
+
 ## Construido con
 
 _Estas son algunas de las herramientas utilizadas_
