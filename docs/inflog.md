@@ -164,7 +164,7 @@ _Los modulos seran planeados e implementeados a medida que se vaya desarrollando
 ### Plan para la verificacion de la calidad del producto
 _Una vez el proyecto se encuetre finalizado o al menos utilizable se realizaran una serie de pruebas para verificar que el funcionamiento del proyecto sea correcto se subiran noticias, se registraran usuarios, se eliminaran usuarios, etc. Todas estas pruebas para verficar que la pagina no tenga alguna fisura al momento de querer utilizarla._
 
-# Computo en la nube
+# Funcionamiento General
 
 ## Commit
 - Crear un fork del proyecto storage-api
