@@ -7,37 +7,37 @@ from modules.auth import auth_required
 
 app = bottle.Bottle()
 
-## Add a new 
+## Add a new
 @app.post("/inflog/noticia")
-def add_a_movie(*args, **kwargs):
+def add_a_news(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
 ## Get news by "noticia_id"
 @app.get("/inflog/noticia/<noticia_id>")
-def get_movies_list(*args, **kwargs):
+def get_news_id(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
 ## Get news by "usuario_id"
 @app.get("/inflog/noticia/<usuario_id>")
-def get_movie_details(*args, **kwargs):
+def get_news_user(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
 ## Get user by usuer_id
 @app.post("/inflog/almacen_usuario/<usuario_id>")
-def update_movie_details(*args, **kwargs):
+def get_user(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
 
 ## Get reports by "noticia_id"
 @app.get("/inflog/reportes/<noticia_id>")
-def get_all_movie_reviews(*args, **kwargs):
+def get_report_id(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code=501, message="Not implemented")
