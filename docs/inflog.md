@@ -206,6 +206,7 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
   ![Login](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Login.PNG)
 
   - Aqui esta la vista previa para registrar una cuenta la cual pedira un username, correo electronico y contraseña para completar el formato se la dara en el boton register.
+  
   ![Register](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Register.PNG)
 
   - Aqui se muestra la vista previa de la pagina principal donde se muestra las noticias subidas por los usuarios con titulo, categoria, fecha, usuario, ademas de tener tambien el boton para subir tu noticia.
