@@ -200,6 +200,9 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
 | --------------------- | ----------- |
 |  Creacion de: modules/inflog.py|
 
+- Crear mock ups, de las vistas que desean implementar, utilizando MoqUps
+![Login](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Login.PNG)
+
 ## Construido con
 
 _Estas son algunas de las herramientas utilizadas_
