@@ -4,6 +4,7 @@ import bottle
 from modules.cors import enable_cors
 import modules.utils as utils
 from modules.auth import auth_required
+from modules.inflog import(add_user)
 
 app = bottle.Bottle()
 
