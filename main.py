@@ -12,12 +12,14 @@ import bottle
 import routes.auth
 import routes.storage
 import models.base
+import routes.inflog
 
 app = bottle.Bottle()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
-
+app.mount("/store", routes.inflog.app)
+app.mount("/inflog", routes.inflog.app)
 
 @app.get("/")
 def root_index(*args, **kwargs):
