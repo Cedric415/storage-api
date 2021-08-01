@@ -8,11 +8,24 @@ from modules.auth import auth_required
 app = bottle.Bottle()
 
 ## Add a new
-@app.post("/inflog/noticia")
-def add_a_news(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
+@app.post("/store")
+def store(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id = str(payload['id'])
+        username = str(payload['username'])
+        password = str(payload['password'])
+        fecha = dt.date.fromisoformat(payload['fecha'])
+        email = str(payload['email'])
+        print("Datos Aceptados")
+        respuesta = add_user(**payload)
+        print(respuesta)
+        print("Done")
+    except:
+        print("Datos incorrectos")
+        raise bottle.HTTPError(405, "datos invalidos")
+    raise bottle.HTTPError(201, respuesta)
 
 ## Get news by "noticia_id"
 @app.get("/inflog/noticia/<noticia_id>")

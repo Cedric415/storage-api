@@ -1,21 +1,31 @@
-import datetime
-import hashlib
-import models.auth
-from bottle import response, request
-import jwt
+import json
+from datetime import datetime
+from modules.storage import (
+    store_string,
+    store_bytes,
+    query_storage,
+    get_storage_file
+)
 
-new =[]
-def add_news(noticia_id, titulo, categoria, fecha, noticia, fuente):
-    new = {
-        "noticia_id": noticia_id,
-        "titulo": titulo,
-        "categoria": categoria,
+
+def add_user(id = None, username = None, password = None, fecha = None, email = None):
+
+    print("Datos del usuario")
+    print(id, username, password, fecha, email)
+    print("Capturado")
+
+
+    data_almacen = {
+        "id": id,
+        "username": username,
+        "password": password,
         "fecha": fecha,
-        "noticia": noticia,
-        "fuente": fuente
+        "email": email,
     }
-    news.append(new)
-    return json.dumps(new)
-
-def get_news()
-    return print(news)
+    nombre_archivo = f"{id}-{username}-{password}-{fecha}-{email}.json"
+    datos_usuario = store_string(
+        "user/users",
+        nombre_archivo,
+        json.dumps(data_almacen)
+    )
+    return datos_usuario
