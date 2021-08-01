@@ -1,6 +1,8 @@
 from json import dumps as json_dumps
 from os import environ
+import datetime as dt
 import bottle
+from modules.bottles import BottleJson
 from modules.cors import enable_cors
 import modules.utils as utils
 from modules.auth import auth_required
@@ -8,7 +10,7 @@ from modules.inflog import(add_user)
 
 app = bottle.Bottle()
 
-## Add a new
+## Add a new user
 @app.post("/store")
 def store(*args, **kwargs):
     payload = bottle.request.json
@@ -27,31 +29,3 @@ def store(*args, **kwargs):
         print("Datos incorrectos")
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
-
-## Get news by "noticia_id"
-@app.get("/inflog/noticia/<noticia_id>")
-def get_news_id(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get news by "usuario_id"
-@app.get("/inflog/noticia/<usuario_id>")
-def get_news_user(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get user by usuer_id
-@app.post("/inflog/almacen_usuario/<usuario_id>")
-def get_user(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
-
-## Get reports by "noticia_id"
-@app.get("/inflog/reportes/<noticia_id>")
-def get_report_id(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code=501, message="Not implemented")
