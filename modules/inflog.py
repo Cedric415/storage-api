@@ -76,3 +76,42 @@ def get_users(users=None):
            if titulo in i
         ]
         print("Done")
+
+    def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha = None, usuario = None):
+    print("Datos del reporte")
+    print(id_reporte, titulo_reporte, reporte, fecha, usuario)
+    print("Exito")
+
+    almacenable3 = {
+        "id_reporte": id_reporte,
+        "titulo_reporte": titulo_reporte,
+        "reporte": reporte,
+        "fecha": fecha,
+        "usuario": usuario,
+    }
+    nombre_de_archivo = f"{id_reporte}-{titulo_reporte}-{reporte}-{fecha}-{usuario}.json"
+    datos_reporte = store_string(
+        "reporte/reportes",
+        nombre_de_archivo,
+        json.dumps(almacenable3)
+    )
+    return datos_reporte
+
+        def get_reportes(id_reporte = None, titulo_reporte = None):
+        query_result = query_storage(
+            "reporte/reportes",
+        )
+        if id_reporte is not None:
+            return [
+               i
+               for i in query_result["content"]
+               if id_reporte in i
+            ]
+            print("Done")
+        if titulo_reporte is not None:
+            return [
+               i
+               for i in query_result["content"]
+               if titulo_reporte in i
+            ]
+            print("Done")

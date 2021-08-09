@@ -9,7 +9,9 @@ from modules.auth import auth_required
 from modules.inflog import(
 add_user,
 get_users,
-add_noticia
+add_noticia,
+get_noticias,
+add_reporte,
 )
 
 app = bottle.Bottle()
@@ -44,7 +46,7 @@ def get_all_info(*args, **kwargs):
 
 ## Añadir nueva noticia
 @app.post("/<id>/noticia")
-def store(*args, **kwargs):
+def noticias(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
@@ -55,7 +57,7 @@ def store(*args, **kwargs):
         fecha = dt.date.fromisoformat(payload['fecha'])
         usuario = str(payload['usuario'])
         print("Datos Aceptados")
-        respuesta = add_notica(**payload)
+        respuesta = add_noticia(**payload)
         print(respuesta)
         print("Done")
     except:
@@ -67,6 +69,34 @@ def store(*args, **kwargs):
 def get_noticias(*args, id_noticia=None, titulo=None, **kwargs):
     try:
        respuesta = get_noticias(id_noticia,titulo)
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+## Añadir nueva noticia
+@app.post("/<id>/reporte")
+def report(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        id_reporte = str(payload['id_reporte'])
+        titulo_reporte = str(payload['titulo_reporte'])
+        reporte = str(payload['reporte'])
+        fecha = dt.date.fromisoformat(payload['fecha'])
+        usuario = str(payload['usuario'])
+        print("Datos Aceptados")
+        respuesta = add_reporte(**payload)
+        print(respuesta)
+        print("Done")
+    except:
+        print("Datos incorrectos")
+        raise bottle.HTTPError(405, "datos invalidos")
+    raise bottle.HTTPError(201, respuesta)
+
+@app.get("/reportes")
+def get_reportes(*args, id_reporte=None, titulo_reporte=None, **kwargs):
+    try:
+       respuesta = get_reportes(id_reporte,titulo_reporte)
     except:
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
