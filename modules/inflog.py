@@ -29,3 +29,10 @@ def add_user(id = None, username = None, password = None, fecha = None, email = 
         json.dumps(data_almacen)
     )
     return datos_usuario
+
+def get_user(users=None):
+    query_result = query_storage(
+        "user/users",
+    )
+    if users is None:
+        return query_result["content"]
