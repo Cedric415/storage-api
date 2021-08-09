@@ -57,3 +57,22 @@ def get_users(users=None):
         json.dumps(almacenable2)
     )
     return datos_noticia
+
+    def get_noticias(id_noticia = None, titulo = None):
+    query_result = query_storage(
+        "noticia/noticias",
+    )
+    if id_noticas is not None:
+        return [
+           i
+           for i in query_result["content"]
+           if id_noticia in i
+        ]
+        print("Done")
+    if titulo is not None:
+        return [
+           i
+           for i in query_result["content"]
+           if titulo in i
+        ]
+        print("Done")

@@ -62,3 +62,11 @@ def store(*args, **kwargs):
         print("Datos incorrectos")
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
+
+@app.get("/noticias")
+def get_noticias(*args, id_noticia=None, titulo=None, **kwargs):
+    try:
+       respuesta = get_noticias(id_noticia,titulo)
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
