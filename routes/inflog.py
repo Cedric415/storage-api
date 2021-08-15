@@ -35,11 +35,16 @@ def store(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
+'''
 ## ver los usuarios generados
-@app.get("/users")
-def get_all_info(*args, **kwargs):
+
+curl http://localhost:8080/inflog/3/alonso -X GET
+
+'''
+@app.get("/<id>/<username>")
+def users(*args, id=None, username=None, **kwargs):
     try:
-       respuesta = get_users()
+       respuesta = get_users(id=id, username=username)
     except:
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
@@ -70,11 +75,16 @@ def noticias(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
-## ver las noticias generadas
-@app.get("/get_noticias")
-def get_noticias(*args, id_noticia=None, titulo=None, **kwargs):
+'''
+## ver los noticias generadas
+
+curl http://localhost:8080/inflog/2 -X GET
+
+'''
+@app.get("/<id_noticia>")
+def get_noticia(*args, id_noticia=None, **kwargs):
     try:
-       respuesta = get_noticias(id_noticia,titulo)
+       respuesta = get_noticias(id_noticia)
     except:
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
@@ -104,11 +114,16 @@ def report(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
+'''
 ## ver los reportes generados
-@app.get("/get_reportes")
-def get_reportes(*args, id_reporte=None, titulo_reporte=None, **kwargs):
+
+curl http://localhost:8080/inflog/2/no_llego_el_manin -X GET
+
+'''
+@app.get("/<id_reporte>/<titulo_reporte>")
+def get_reporte(*args, id_reporte=None, titulo_reporte=None, **kwargs):
     try:
-       respuesta = get_reportes(id_reporte,titulo_reporte)
+       respuesta = get_reportes(id_reporte, titulo_reporte)
     except:
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)

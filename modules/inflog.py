@@ -30,12 +30,23 @@ def add_user(id = None, username = None, password = None, fecha = None, email = 
     )
     return datos_usuario
 
-def get_users(users=None):
+def get_users(id=None, username=None):
     query_result = query_storage(
         "user/users",
     )
-    if users is None:
-        return query_result["content"]
+    if id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if id in r
+        ]
+        print("done")
+    if username is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if username in r
+        ]
 
 def add_noticia(id_noticia = None, titulo = None, noticia = None, fuente = None, fecha = None, usuario = None):
 
@@ -59,24 +70,18 @@ def add_noticia(id_noticia = None, titulo = None, noticia = None, fuente = None,
     )
     return datos_noticia
 
-def get_noticias(id_noticia = None, titulo = None):
+def get_noticias(id_noticia = None):
     query_result = query_storage(
         "noticia/noticias",
     )
-    if id_noticas is not None:
+    if id_noticia is not None:
         return [
            i
            for i in query_result["content"]
            if id_noticia in i
         ]
         print("Done")
-    if titulo is not None:
-        return [
-           i
-           for i in query_result["content"]
-           if titulo in i
-        ]
-        print("Done")
+
 
 def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha = None, usuario = None):
     print("Datos del reporte")
