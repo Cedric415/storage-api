@@ -37,7 +37,8 @@ def get_users(users=None):
     if users is None:
         return query_result["content"]
 
-    def add_noticia(id_noticia = None, titulo = None, noticia = None, fuente = None, fecha = None, usuario = None):
+def add_noticia(id_noticia = None, titulo = None, noticia = None, fuente = None, fecha = None, usuario = None):
+
     print("Datos de la noticia")
     print(id_noticia, titulo, noticia, fuente, fecha, usuario)
     print("Exito")
@@ -58,7 +59,7 @@ def get_users(users=None):
     )
     return datos_noticia
 
-    def get_noticias(id_noticia = None, titulo = None):
+def get_noticias(id_noticia = None, titulo = None):
     query_result = query_storage(
         "noticia/noticias",
     )
@@ -77,7 +78,7 @@ def get_users(users=None):
         ]
         print("Done")
 
-    def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha = None, usuario = None):
+def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha = None, usuario = None):
     print("Datos del reporte")
     print(id_reporte, titulo_reporte, reporte, fecha, usuario)
     print("Exito")
@@ -97,7 +98,7 @@ def get_users(users=None):
     )
     return datos_reporte
 
-        def get_reportes(id_reporte = None, titulo_reporte = None):
+def get_reportes(id_reporte = None, titulo_reporte = None):
         query_result = query_storage(
             "reporte/reportes",
         )

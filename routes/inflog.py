@@ -6,17 +6,16 @@ from modules.bottles import BottleJson
 from modules.cors import enable_cors
 import modules.utils as utils
 from modules.auth import auth_required
-from modules.inflog import(
-add_user,
-get_users,
-add_noticia,
-get_noticias,
-add_reporte,
-)
+from modules.inflog import(add_user, get_users, add_noticia, get_noticias, add_reporte, get_reportes)
 
 app = bottle.Bottle()
 
+'''
 ## Add a new user
+
+curl http://localhost:8080/inflog/store  -X POST -H 'Content-Type: application/json'  -d '{"id" : "2" , "username" : "John" , "password" : "pass321" , "fecha":"2021-01-01" , "email" : "estesunejemplot3@ejemplo.com"}'
+
+'''
 @app.post("/store")
 def store(*args, **kwargs):
     payload = bottle.request.json
@@ -36,6 +35,7 @@ def store(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
+## ver los usuarios generados
 @app.get("/users")
 def get_all_info(*args, **kwargs):
     try:
@@ -44,8 +44,13 @@ def get_all_info(*args, **kwargs):
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
 
-## Añadir nueva noticia
-@app.post("/<id>/noticia")
+'''
+## Añadir una noticia
+
+curl http://localhost:8080/inflog/noticias  -X POST -H 'Content-Type: application/json'  -d '{"id_noticia" : "2" , "titulo" : "Llego el manin" , "noticia" : "pues que ya llego el manin" , "fuente" : "wikipedia.comelmanin" , "fecha":"2021-01-01" , "usuario" : "IronWill44"}'
+
+'''
+@app.post("/noticias")
 def noticias(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -65,7 +70,8 @@ def noticias(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
-@app.get("/noticias")
+## ver las noticias generadas
+@app.get("/get_noticias")
 def get_noticias(*args, id_noticia=None, titulo=None, **kwargs):
     try:
        respuesta = get_noticias(id_noticia,titulo)
@@ -73,8 +79,13 @@ def get_noticias(*args, id_noticia=None, titulo=None, **kwargs):
         raise bottle.HTTPError(500, "Error interno")
     raise bottle.HTTPError(200, respuesta)
 
-## Añadir nueva noticia
-@app.post("/<id>/reporte")
+'''
+## Añadir un reporte
+
+curl http://localhost:8080/inflog/report  -X POST -H 'Content-Type: application/json'  -d '{"id_reporte" : "2" , "titulo_reporte" : "Llego el manin" , "reporte" : "pues que no llego el manin" , "fecha":"2021-01-01" , "usuario" : "BronzeWill44"}'
+
+'''
+@app.post("/report")
 def report(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
@@ -93,7 +104,8 @@ def report(*args, **kwargs):
         raise bottle.HTTPError(405, "datos invalidos")
     raise bottle.HTTPError(201, respuesta)
 
-@app.get("/reportes")
+## ver los reportes generados
+@app.get("/get_reportes")
 def get_reportes(*args, id_reporte=None, titulo_reporte=None, **kwargs):
     try:
        respuesta = get_reportes(id_reporte,titulo_reporte)
