@@ -55,11 +55,12 @@ _Algunas de las consultas que se pueden realizar son:_
 ## Rutas https
 | Path                  | Descripción |
 | --------------------- | ----------- |
-|  /inflog/noticia          |   se podran consultar todas las noticias
-|  /inflog/noticia/<noticia_id>         |  Se podra consultar las noticias por medio de su identificador unico
-|  /inflog/noticia/<usuario_id>          |  Se podra consultar las noticias subidas por un usuario
-|  /inflog/almacen_usuario/<usuario_id> |   Se podra consultar la informacion del usuario         
-|  /inflog/reportes/<noticia_id> | Se podran consultar los reportes hechos hacia una noticia por medio de su id
+|  /inflog/user/users          |   se podran consultar los usuarios generados
+|  /inflog/noticia/noticias         |  Se podra consultar las noticias generadas
+|  /inflog/reporte/reportes          |  Se podra consultar las reportes generados
+|  /inflog/users/user/<id> |   Se podra consultar los usuarios por medio de su id         
+|  /inflog/noticia/noticias/<id_noticia> | Se podran consultar los reportes hechos hacia una noticia por medio de su id
+|  /inflog/reporte/reportes/<id_reporte> | Se podran consultar los reportes hechos hacia una los reportes por medio de su id
 
 ## Ejemplos de mensajes HTTP
 
