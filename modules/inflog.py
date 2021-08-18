@@ -48,21 +48,22 @@ def get_users(id=None, username=None):
            if username in r
         ]
 
-def add_noticia(id_noticia = None, titulo = None, noticia = None, fuente = None, fecha = None, usuario = None):
+def add_noticia(id_noticia = None, titulo = None, categoria = None, noticia = None, fuente = None, fecha = None, usuario = None):
 
     print("Datos de la noticia")
-    print(id_noticia, titulo, noticia, fuente, fecha, usuario)
+    print(id_noticia, titulo, categoria, noticia, fuente, fecha, usuario)
     print("Exito")
 
     almacenable2 = {
         "id_noticia": id_noticia,
         "titulo": titulo,
+        "categoria": categoria,
         "noticia": noticia,
         "fuente": fuente,
         "fecha": fecha,
         "usuario": usuario,
     }
-    nombre_de_archivo = f"{id_noticia}-{titulo}-{noticia}-{fuente}-{fecha}-{usuario}.json"
+    nombre_de_archivo = f"{id_noticia}-{titulo}-{categoria}-{noticia}-{fuente}-{fecha}-{usuario}.json"
     datos_noticia = store_string(
         "noticia/noticias",
         nombre_de_archivo,

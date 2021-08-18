@@ -52,7 +52,7 @@ def users(*args, id=None, username=None, **kwargs):
 '''
 ## Añadir una noticia
 
-curl http://localhost:8080/inflog/noticias  -X POST -H 'Content-Type: application/json'  -d '{"id_noticia" : "2" , "titulo" : "Llego el manin" , "noticia" : "pues que ya llego el manin" , "fuente" : "wikipedia.comelmanin" , "fecha":"2021-01-01" , "usuario" : "IronWill44"}'
+curl http://localhost:8080/inflog/noticias  -X POST -H 'Content-Type: application/json'  -d '{"id_noticia" : "2" , "titulo" : "Llego el manin" , "categoria" : "Sociales" , "noticia" : "pues que ya llego el manin" , "fuente" : "wikipedia.comelmanin" , "fecha":"2021-01-01" , "usuario" : "IronWill44"}'
 
 '''
 @app.post("/noticias")
@@ -62,6 +62,7 @@ def noticias(*args, **kwargs):
     try:
         id_noticia = str(payload['id_noticia'])
         titulo = str(payload['titulo'])
+        categoria = str(payload['categoria'])
         noticia = str(payload['noticia'])
         fuente = str(payload['fuente'])
         fecha = dt.date.fromisoformat(payload['fecha'])

@@ -102,7 +102,7 @@ _Algunas de las consultas que se pueden realizar son:_
 
 ## Ejemplos de interacciones con el servidor
 ```
-POST /inflog/almacen_usuario
+POST /inflog/user
 ```
 - Recibe una estructura para registrar un usuario nuevo.
 - 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
@@ -123,9 +123,9 @@ GET /inflog/noticia
 - D.O.M regresa un mensaje de falla.
 
 ```
-GET /inflog/noticia/<usuario_id>
+GET /inflog/noticia/<noticia_id>
 ```
-- Regresa los datos de las noticias subidas por un usuario
+- Regresa los datos de las noticias subidas por si ID
 - 200, despliega la informacion sobre los noticias realizadas por un usuario.
 - D.O.M regresa un mensaje de falla.
 
@@ -137,9 +137,9 @@ GET /inflog/reportes
 - D.O.M regresa un mensaje de falla.
 
 ```
-GET /inflog/reportes/<noticia_id>
+GET /inflog/reportes/<reporte_id>
 ```
-- Regresa los datos de los reportes hechos hacia una noticia.
+- Regresa los datos de los reportes por ID.
 - 200, despliega la informacion sobre los reportes realizados hacia una noticia.
 - D.O.M regresa un mensaje de falla.
 
