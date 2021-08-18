@@ -201,7 +201,9 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
 | --------------------- | ----------- |
 |  Creacion de: modules/inflog.py| d47f0b560c9322690d78ad4b76b86b5f2ec425e6
 
-- Crear mock ups, de las vistas que desean implementar, utilizando MoqUps
+# Paneacion de desarrollo del frontend
+
+_El desarrollo del front end es una parte importante del proyecto ya que esto sera lo primero que vera el usuario al ingresar a la pagina. Ademas este debe cumplir para que todas las funcionalidades del proyecto se vean reflejadas de tal forma que al usuario le resulte sencillo el uso de la misma._ 
 
   - Aqui se muestra el login para ingresar con tu cuenta a la pagina que esta
   ![Login](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Login.PNG)
