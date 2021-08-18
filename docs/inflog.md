@@ -203,7 +203,7 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
 
 - Crear mock ups, de las vistas que desean implementar, utilizando MoqUps
 
-  - Aqui se muestra el login para ingresar con tu cuenta a la pagina
+  - Aqui se muestra el login para ingresar con tu cuenta a la pagina que esta
   ![Login](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Login.PNG)
 
   - Aqui esta la vista previa para registrar una cuenta la cual pedira un username, correo electronico y contraseña para completar el formato se la dara en el boton register.
@@ -216,7 +216,7 @@ constantes, y si necesitas crear objetos funciones que retornen simulando una cr
   - Aqui se muestra la vista previa de cuando seleccionas alguna noticia de interes te muestra el titulo y una pequeña sinopsis de la misma un boton para ir a la pagina original de la noticia ademas de tener un boton para realizar reportes sobre la noticia y para calificar la noticia.
   ![Noticia](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Noticia.PNG)
 
-  - Aqui se muestra la vista previa de lo que va a ser el menu para realizar un reporte a una noticia.
+  - Aqui se muestra la vista previa de lo que va a ser el menu para realizar un reporte a una noticia, los cuales requeriran un titulo y una descripcion de por que se esta generando el reporte.
   ![Reporte](https://github.com/Cedric415/storage-api/blob/master/docs/assets/inflog_Reportes.PNG)
 
   - Aqui se muestra los datos requeridos para subir una noticia a la pagina la cual te pide un titulo, una categoria, fecha de la noticia, una pequeña descripcion y la fuente de informacion una vez completo el formulario se le dara alboton para subir la noticia.
