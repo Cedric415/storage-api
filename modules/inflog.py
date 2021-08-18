@@ -9,7 +9,10 @@ from modules.storage import (
 
 
 def add_user(id = None, username = None, password = None, fecha = None, email = None):
-
+    '''
+    Esta funcion se encarga de recibir todos los valores necesarios para crear el usuario en caso de que no se introduscan los valores
+    correctamente la funcion manda un mensaje de error.
+    '''
     print("Datos del usuario")
     print(id, username, password, fecha, email)
     print("Capturado")
@@ -31,6 +34,9 @@ def add_user(id = None, username = None, password = None, fecha = None, email = 
     return datos_usuario
 
 def get_users(id=None, username=None):
+    '''
+    Esta funcion muestra a los usuarios por medio de su ID y username en la carpeta user/users.
+    '''
     query_result = query_storage(
         "user/users",
     )
@@ -49,7 +55,10 @@ def get_users(id=None, username=None):
         ]
 
 def add_noticia(id_noticia = None, titulo = None, categoria = None, noticia = None, fuente = None, fecha = None, usuario = None):
-
+    '''
+    Esta funcion se encarga de recibir todos los valores necesarios para crear una noticia, en caso de que no se introduscan los valores
+    correctamente la funcion manda un mensaje de error.
+    '''
     print("Datos de la noticia")
     print(id_noticia, titulo, categoria, noticia, fuente, fecha, usuario)
     print("Exito")
@@ -72,6 +81,9 @@ def add_noticia(id_noticia = None, titulo = None, categoria = None, noticia = No
     return datos_noticia
 
 def get_noticias(id_noticia = None):
+    '''
+    Esta funcion muestra a los usuarios por medio de su ID en la carpeta noticia/noticias.
+    '''
     query_result = query_storage(
         "noticia/noticias",
     )
@@ -85,6 +97,10 @@ def get_noticias(id_noticia = None):
 
 
 def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha = None, usuario = None):
+    '''
+    Esta funcion se encarga de recibir todos los valores necesarios para crear un reporte en caso de que no se introduscan los valores
+    correctamente la funcion manda un mensaje de error.
+    '''
     print("Datos del reporte")
     print(id_reporte, titulo_reporte, reporte, fecha, usuario)
     print("Exito")
@@ -105,6 +121,9 @@ def add_reporte(id_reporte = None, titulo_reporte = None, reporte = None, fecha 
     return datos_reporte
 
 def get_reportes(id_reporte = None, titulo_reporte = None):
+    '''
+    Esta funcion muestra a los usuarios por medio de su ID y titulo del reporte en la carpeta reporte/reportes.
+    '''
         query_result = query_storage(
             "reporte/reportes",
         )
